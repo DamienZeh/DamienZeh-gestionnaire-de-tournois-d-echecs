@@ -25,28 +25,12 @@ class ShowRound:
 
     @staticmethod
     def view_matches_round(matches):
-        match_index = 1
-        del matches["id_round_tournoi"]
-        del matches["nom_du_round"]
-        del matches["date_debut_round"]
-        for item in matches:
-            match = matches[f"match {match_index}"]
-            item = f"{item}: {match}"
-            item_clean = (
-                item.replace("{", "")
-                .replace("}", "")
-                .replace("'", "")
-                .replace("[", "")
-                .replace("]", "")
-            )
-            print(item_clean)
-            match_index += 1
-
-    @staticmethod
-    def view_matches_round_(matches):
-        print(f'\n{matches["nom_du_round"]}')
-        print(f'date de debut :{matches["date_debut_round"]}')
-        print(f'date de fin :{matches["date_fin_round"]}')
+        try:
+            print(f'{matches["nom_du_round"]}')
+            print(f'date de debut :{matches["date_debut_round"]}')
+            print(f'date de fin :{matches["date_fin_round"]}')
+        except:
+            pass
         match_index = 1
         matches_list = []
         matches_list.extend(
@@ -69,6 +53,7 @@ class ShowRound:
             )
             print(list_data_clean)
             match_index += 1
+        print()
 
     @staticmethod
     def view_end_round():

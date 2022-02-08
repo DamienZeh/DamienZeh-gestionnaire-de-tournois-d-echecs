@@ -170,5 +170,5 @@ class RoundDeserializer:
             )
             index = 0
             for round in data_rounds_tournament:
-                round_view.ShowRound.view_matches_round_(round)
+                round_view.ShowRound.view_matches_round(round)
                 index += 1
