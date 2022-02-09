@@ -96,11 +96,16 @@ class ShowPlayer:
     @staticmethod
     def point_player(match_index, players_table, matches, tournament_name):
         print("\nEntrez les résultats")
-        del matches["id_round_tournoi"]
-        del matches["nom_du_round"]
-        del matches["date_debut_round"]
-        del matches["date_fin_round"]
-        for item in matches:
+        matches_list = []
+        matches_list.extend(
+            [
+                matches["match 1"],
+                matches["match 2"],
+                matches["match 3"],
+                matches["match 4"],
+            ]
+        )
+        for item in matches_list:
             match = matches[f"match {match_index}"]
             for player in match:
                 print(f"{player[0]} (le simulateur lui donne : {player[1]} point).")

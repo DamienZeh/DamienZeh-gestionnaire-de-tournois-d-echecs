@@ -1,5 +1,5 @@
 import view.player_view
-from view import menus_view, tournament_view, match_view, round_view
+from view import menus_view, tournament_view, round_view
 from controller import (
     player_controller,
     tournament_controller,
@@ -202,7 +202,6 @@ class Menus:
             )
             writer_data_controller.writer_data_end_round(tournament_name, round_name)
             writer_data_controller.writer_rounds_name(tournament_name)
-            match_view.ShowMatch.view_match_result()
             writer_data_controller.writer_timestamp_end_round(
                 tournament_name, round_name
             )
