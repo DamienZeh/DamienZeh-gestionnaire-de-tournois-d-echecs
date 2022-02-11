@@ -25,6 +25,7 @@ class Tournament:
         name="",
         place="",
         start_date="",
+        end_date="",
         round_number="",
         time_control="",
         description="",
@@ -34,6 +35,7 @@ class Tournament:
         self.name = name
         self.place = place
         self.start_date = start_date
+        self.end_date = end_date
         self.round_number = round_number
         self.time_control = time_control
         self.description = description
