@@ -36,7 +36,13 @@ class ShowTournament:
 
     @staticmethod
     def view_info_tournament(
-        tournament_name, place, start_date, round_number, time_control, description
+        tournament_name,
+        place,
+        start_date,
+        round_number,
+        time_control,
+        description,
+        end_date,
     ):
         print(f"nom_tournoi : {tournament_name}")
         print(f"endroit : {place}")
@@ -44,7 +50,16 @@ class ShowTournament:
         print(f"rounds_finis : {round_number}")
         print(f"mode : {time_control}")
         print(f"description : {description}")
+        print(f"date_de_fin : {end_date}")
 
     @staticmethod
     def view_timestamp_start_tournament(timestamp):
         print(f"date et heure du debut du tournoi :{timestamp}")
+
+    @staticmethod
+    def finish_tournament(timestamp):
+        print(
+            f"Le tournoi s'est terminé au :{timestamp},\n"
+            f"Rentrez les nouveaux score du classement(choix 5),\n"
+            "en fonction des points et du classement actuel des joueurs(choix 2)."
+        )
