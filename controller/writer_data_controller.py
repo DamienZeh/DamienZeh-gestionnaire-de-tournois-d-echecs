@@ -7,6 +7,7 @@ from controller import (
 )
 from view import player_view, tournament_view, round_view
 from tinydb import TinyDB, Query
+import re
 
 user = Query()
 database_manager = TinyDB("database_manager.json", indent=4)
@@ -25,9 +26,9 @@ def writer_data_tournament():
     names_list = tournament_controller.TournamentDeserializer.all_tournaments_name()
     if name not in names_list:
         tournament_table.insert_multiple(tournament_serializer)
+        writer_timestamp_start_tournament(name)
     else:
         tournament_view.ShowTournament.view_tournament_already_exist(name)
-    writer_timestamp_start_tournament(name)
     return name
 
 
@@ -77,7 +78,6 @@ def writer_rounds_name(tournament_name):
 
 def writer_timestamp_start_round(tournament_name, round_name):
     timestamp = tournament_controller.DataTournament.timestamp()
-    round_view.ShowRound.view_timestamp_start(timestamp)
     data_tournament = tournament_table.search(user.nom_tournoi == f"{tournament_name}")
     id_tournament = (data_tournament[0])["id_tournament"]
     round_table.update(
@@ -113,26 +113,41 @@ def writer_players_in_list(tournament_name):
     player = players_serializer[0]
     lastname = player["nom"]
     firstname = player["prenom"]
+    ids = f"{lastname} {firstname}"
+    id_lastname_firstname = (
+        player_controller.PlayersDeserializer.compare_id_lastname_firstname(
+            lastname, firstname
+        )
+    )
     data_tournament = tournament_table.search(user.nom_tournoi == f"{tournament_name}")
-    id_players_list = (data_tournament[0])["id_des_joueurs_et_points"]
-    lastnames_list = player_controller.PlayersSerializer.lastname_players()
-    firstnames_list = player_controller.PlayersSerializer.firstname_players()
+    id_players_list_with_point = (data_tournament[0])["id_des_joueurs_et_points"]
+    id_players_list = []
+    for id in id_players_list_with_point:
+        id_players_list.append(id[0])
     id_player_with_point = [player["id_joueur"], point_start]
-    if lastname not in lastnames_list or firstname not in firstnames_list:
-        id_players_list.append(id_player_with_point)
+    no_existing = ""
+    id_players_table_list = []
+    for id_player in players_table.all():
+        id_players_table_list.append(id_player["id_joueur"])
+    if (
+        id_lastname_firstname not in id_players_list
+        and id_lastname_firstname not in id_players_table_list
+    ):
+        id_players_list_with_point.append(id_player_with_point)
         tournament_table.update(
-            {"id_des_joueurs_et_points": id_players_list},
+            {"id_des_joueurs_et_points": id_players_list_with_point},
             user.nom_tournoi == f"{tournament_name}",
         )
-        no_existing = True
-    else:
-        player_view.ShowPlayer.view_player_already_exist_tournament()
-        no_existing = False
-
-    if lastname not in lastnames_list or firstname not in firstnames_list:
+        player_view.ShowPlayer.view_new_player(ids)
         players_table.insert_multiple(players_serializer)
-    else:
-        player_view.ShowPlayer.view_player_already_exist_ranking()
+        no_existing = True
+    elif (
+        id_lastname_firstname in id_players_list
+        and id_lastname_firstname in id_players_table_list
+    ):
+        player_view.ShowPlayer.view_player_already_exist_tournament()
+    elif id_lastname_firstname in id_players_table_list:
+        player_view.ShowPlayer.view_player_not_copy_already_exist_ranking()
     return no_existing
 
 

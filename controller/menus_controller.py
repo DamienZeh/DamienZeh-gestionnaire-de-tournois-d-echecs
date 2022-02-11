@@ -9,6 +9,7 @@ from controller import (
 )
 from view import player_view
 from tinydb import TinyDB, Query
+import itertools
 
 user = Query()
 tournament_table = writer_data_controller.tournament_table
@@ -126,7 +127,7 @@ class Menus:
                     length_players_list_id += 1
             elif choice == 5:
                 player_controller.PlayersDeserializer.choose_player_in_rank(
-                    players_table, tournament_name
+                    tournament_name
                 )
                 Menus.previous_menu_with_parameter_name(
                     Menus.second_menu, tournament_name

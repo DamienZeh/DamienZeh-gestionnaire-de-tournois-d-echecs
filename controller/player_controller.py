@@ -137,53 +137,48 @@ class PlayersSerializer:
 
 class PlayersDeserializer:
     @staticmethod
-    def choose_player_in_rank(players_table, tournament_name):
-        players_list_lastnames = []
-        players_list_firstnames = []
+    def choose_player_in_rank(tournament_name):
         point_start = 0.0
         name = input("Tapez son nom : ")
         firstname = input("Tapez son prénom : ")
-        checkName = players_table.search(user.nom == name)
-        checkFirstname = players_table.search(user.prenom == firstname)
+        id_lastname_firstname = PlayersDeserializer.compare_id_lastname_firstname(
+            name, firstname
+        )
         data_tournament = tournament_table.search(
             user.nom_tournoi == f"{tournament_name}"
         )
-        id_players_list = (data_tournament[0])["id_des_joueurs_et_points"]
-        if checkName and checkFirstname:
-            for player in id_players_list:
-                lastnames_list = players_table.search(user.id_joueur == player[0])
-                players_list_lastnames.append((lastnames_list[0])["nom"])
-                firstnames_list = players_table.search(user.id_joueur == player[0])
-                players_list_firstnames.append((firstnames_list[0])["prenom"])
-
-            id_player = [(checkName[0])["id_joueur"], point_start]
-            dict_checkmate = checkName[0]
-            lastname = dict_checkmate["nom"]
-            firstname = dict_checkmate["prenom"]
-            if (
-                lastname not in players_list_lastnames
-                or firstname not in players_list_firstnames
-            ):
-                id_players_list.append(id_player)
+        id_players_list_with_point = (data_tournament[0])["id_des_joueurs_et_points"]
+        players_tournament = []
+        for id in id_players_list_with_point:
+            players_tournament.append(id[0])
+        ids = f"{name} {firstname}"
+        id_players_table_list = []
+        for id_player in players_table.all():
+            id_players_table_list.append(id_player["id_joueur"])
+        if id_lastname_firstname in id_players_table_list:
+            if id_lastname_firstname in players_tournament:
+                player_view.ShowPlayer.view_player_already_exist_tournament()
+            else:
+                check_id = players_table.search(user.id_joueur == id_lastname_firstname)
+                id_player_with_point = [check_id[0]["id_joueur"], point_start]
+                id_players_list_with_point.append(id_player_with_point)
                 tournament_table.update(
-                    {"id_des_joueurs_et_points": id_players_list},
+                    {"id_des_joueurs_et_points": id_players_list_with_point},
                     user.nom_tournoi == f"{tournament_name}",
                 )
-                player_view.ShowPlayer.view_new_player_in_ranking(checkName)
-            else:
-                player_view.ShowPlayer.view_player_already_exist_tournament()
+                player_view.ShowPlayer.view_new_player(ids)
         else:
-            player_view.ShowPlayer.view_player_wrong_name()
+            player_view.ShowPlayer.view_player_not_exist()
 
     @staticmethod
     def change_rank_player(list_player):
         lastname = input("Tapez son nom : ")
         firstname = input("Tapez son prénom : ")
 
-        checkName = list_player.search(user.nom == lastname)
-        checkFirstname = list_player.search(user.prenom == firstname)
+        checkname = list_player.search(user.nom == lastname)
+        checkfirstname = list_player.search(user.prenom == firstname)
 
-        if checkName and checkFirstname:
+        if checkname and checkfirstname:
 
             rank = EnterDataPlayer.enter_ranking()
             list_player.update(
@@ -199,20 +194,23 @@ class PlayersDeserializer:
         name_split = str(player_name).split()
         lastname = name_split[0]
         firstname = name_split[1]
-        checkName = players_table.search(user.nom == lastname)
-        checkFirstname = players_table.search(user.prenom == firstname)
+        checkname = players_table.search(user.nom == lastname)
+        checkfirstname = players_table.search(user.prenom == firstname)
         data_tournament = tournament_table.search(
             user.nom_tournoi == f"{tournament_name}"
         )
-        point = EnterDataPlayer.enter_point()
-        if checkName and checkFirstname:
-            id_player = (checkName[0])["id_joueur"]
+        id_lastname_firstname = PlayersDeserializer.compare_id_lastname_firstname(
+            lastname, firstname
+        )
+        if checkname and checkfirstname:
+            id_player = players_table.search(user.id_joueur == id_lastname_firstname)
             id_players_list = (data_tournament[0])["id_des_joueurs_et_points"]
             point_existing = 0
             id_and_new_point = []
+            point = EnterDataPlayer.enter_point()
             for player in id_players_list:
                 id = player[0]
-                if id_player == id:
+                if id_player[0]["id_joueur"] == id:
                     point_existing = player[1]
                     player[1] = point + point_existing
                 id_and_new_point.append(player)
@@ -274,3 +272,21 @@ class PlayersDeserializer:
     def key_order_point():
         key = lambda rang: rang["Points totaux du tournoi"]
         return key
+
+    @staticmethod
+    def compare_id_lastname_firstname(lastname, firstname):
+        id_player_lastname = players_table.search(user.nom == f"{lastname}")
+        id_player_firstname = players_table.search(user.prenom == f"{firstname}")
+        id_lastname = []
+        id_firstname = []
+        for id_l in id_player_lastname:
+            id_lastname.append(id_l["id_joueur"])
+        for id_f in id_player_firstname:
+            id_firstname.append(id_f["id_joueur"])
+        if set(id_lastname) & set(id_firstname):
+            id = set(id_lastname) & set(id_firstname)
+            id_str = str(id)
+            id_first_and_lastname = int(id_str.replace("{", "").replace("}", ""))
+        else:
+            id_first_and_lastname = None
+        return id_first_and_lastname

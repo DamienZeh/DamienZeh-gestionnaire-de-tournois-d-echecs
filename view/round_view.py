@@ -17,7 +17,8 @@ class ShowRound:
 
     @staticmethod
     def view_round_work():
-        time.sleep(1)
+        print("\nLancement du round...")
+        time.sleep(2)
         input("Appyuez sur une touche quand le round est terminé...")
         print("...round terminé.\n")
         time.sleep(1)
@@ -25,8 +26,9 @@ class ShowRound:
 
     @staticmethod
     def view_matches_round(matches):
+        print()
         try:
-            print(f'{matches["nom_du_round"]}')
+            print(f'nom du round :{matches["nom_du_round"]}')
             print(f'date de debut :{matches["date_debut_round"]}')
             print(f'date de fin :{matches["date_fin_round"]}')
         except:
@@ -53,17 +55,11 @@ class ShowRound:
             )
             print(list_data_clean)
             match_index += 1
-        print()
 
     @staticmethod
     def view_end_round():
         print("Ce round est fini, et les points de matchs ont été rentré.\n")
 
     @staticmethod
-    def view_timestamp_start(timestamp):
-        print("\nLancement du round...")
-        print(f"date et heure du debut du round :{timestamp}")
-
-    @staticmethod
     def view_timestamp_end(timestamp):
-        print(f"\ndate et heure de fin du round :{timestamp}")
+        print(f"date et heure de fin du round :{timestamp}")

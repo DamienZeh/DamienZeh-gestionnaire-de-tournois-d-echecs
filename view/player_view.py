@@ -7,6 +7,10 @@ class ShowPlayer:
         print("Vous avez déja entré ce joueur")
 
     @staticmethod
+    def view_player_not_exist():
+        print("Ce joueur n'existe pas, dans la liste.")
+
+    @staticmethod
     def view_enter_player(number_players_entered, number_players):
         print(f"Entrez le joueur n° : {number_players_entered} sur {number_players} : ")
 
@@ -17,9 +21,16 @@ class ShowPlayer:
         )
 
     @staticmethod
+    def view_player_not_copy_already_exist_ranking():
+        print(
+            "Ce joueur existe déjà dans le classement général"
+            "Vous ne pouvez donc pas le créer , nimportez le plutôt avec le choix 5 du menu."
+        )
+
+    @staticmethod
     def view_player_already_exist_ranking():
         print(
-            "Cette personne est déjà enregistrée  dans la liste des joueurs(hors tournoi en cours)."
+            "Cette personne est déjà enregistrée  dans le classement général(hors tournoi en cours)."
         )
 
     @staticmethod
@@ -63,8 +74,8 @@ class ShowPlayer:
         print("erreur: Personne n'a ce nom et/ou prénom")
 
     @staticmethod
-    def view_new_player_in_ranking(checkName):
-        sentence = f"Vous avez ajouté : {checkName}, en joueur"
+    def view_new_player(checkName):
+        sentence = f"Vous avez ajouté : {checkName} en joueur"
         clean_sentence = (
             sentence.replace("{", "")
             .replace("}", "")
