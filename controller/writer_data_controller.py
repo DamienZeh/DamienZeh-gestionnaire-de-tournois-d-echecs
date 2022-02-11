@@ -87,14 +87,6 @@ def writer_timestamp_start_round(tournament_name, round_name):
     )
 
 
-def writer_timestamp_start_tournament(tournament_name):
-    timestamp = tournament_controller.DataTournament.timestamp()
-    tournament_view.ShowTournament.view_timestamp_start_tournament(timestamp)
-    tournament_table.update(
-        {"date_de_debut": timestamp}, (user.nom_tournoi == f"{tournament_name}")
-    )
-
-
 def writer_timestamp_end_round(tournament_name, round_name):
     timestamp = tournament_controller.DataTournament.timestamp()
     round_view.ShowRound.view_timestamp_end(timestamp)
@@ -104,6 +96,22 @@ def writer_timestamp_end_round(tournament_name, round_name):
         {"date_fin_round": timestamp},
         (user.nom_du_round == f"{round_name}")
         & (user.id_round_tournoi == id_tournament),
+    )
+
+
+def writer_timestamp_start_tournament(tournament_name):
+    timestamp = tournament_controller.DataTournament.timestamp()
+    tournament_view.ShowTournament.view_timestamp_start_tournament(timestamp)
+    tournament_table.update(
+        {"date_de_debut": timestamp}, (user.nom_tournoi == f"{tournament_name}")
+    )
+
+
+def writer_timestamp_end_tournament(tournament_name):
+    timestamp = tournament_controller.DataTournament.timestamp()
+    tournament_view.ShowTournament.finish_tournament(timestamp)
+    tournament_table.update(
+        {"date_de_fin": timestamp}, (user.nom_tournoi == f"{tournament_name}")
     )
 
 
