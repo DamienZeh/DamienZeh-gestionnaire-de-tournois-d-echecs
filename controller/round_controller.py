@@ -155,7 +155,7 @@ class RoundDeserializer:
         return names_round
 
     @staticmethod
-    def all_matchs_rounds(tournament_name):
+    def all_matches_rounds(tournament_name):
         data_tournament = tournament_table.search(user.nom_tournoi == tournament_name)
         rounds = data_tournament[0]["rounds_finis"]
         if rounds == "aucun pour le moment.":
