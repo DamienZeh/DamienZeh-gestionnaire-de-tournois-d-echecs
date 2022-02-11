@@ -74,6 +74,7 @@ class DataTournament(models.Tournament):
         self.name = EnterDataTournement.enter_name()
         self.place = EnterDataTournement.enter_place()
         self.start_date = "Le tournoi n'a pas encore commencé."
+        self.end_date = "Le tournoi n'est pas encore fini."
         self.round_number = "aucun pour le moment."
         self.time_control = EnterDataTournement.mode_tournament()
         self.description = EnterDataTournement.enter_description()
@@ -85,6 +86,7 @@ class DataTournament(models.Tournament):
         self.tournament["nom_tournoi"] = self.name
         self.tournament["endroit"] = self.place
         self.tournament["date_de_debut"] = self.start_date
+        self.tournament["date_de_fin"] = self.end_date
         self.tournament["rounds_finis"] = self.round_number
         self.tournament["mode_blitz_bullet_ou_coup_rapide"] = self.time_control
         self.tournament["description"] = self.description
@@ -130,8 +132,9 @@ class TournamentDeserializer:
         round_number = (tournament[0])["rounds_finis"]
         time_control = (tournament[0])["mode_blitz_bullet_ou_coup_rapide"]
         description = (tournament[0])["description"]
+        end_date = (tournament[0])["date_de_fin"]
         tournament_view.ShowTournament.view_info_tournament(
-            name, place, start_date, round_number, time_control, description
+            name, place, start_date, round_number, time_control, description, end_date
         )
 
     @staticmethod
