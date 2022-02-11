@@ -70,7 +70,7 @@ class Menus:
         while choice not in choice_list:
             menu = input(
                 "\n1 - Affichez les informations sur le tournoi en cours.\n"
-                "2 - Affichez la liste des joueurs du tournoi en cours avec les points totaux.\n"
+                "2 - Affichez la liste des joueurs du tournoi avec les points totaux.\n"
                 "3 - Affichez la liste de tous les joueurs déjà enregistrés.\n"
                 "4 - Entrez un joueur.\n"
                 "5 - Ou choississez un joueur présent dans le classement général.\n"
@@ -147,20 +147,130 @@ class Menus:
 
     @staticmethod
     def tournament_start_menu(tournament_name=""):
-        round_name = round_controller.EnterDataRound.round_name(tournament_name)
+        data_tournament = tournament_table.search(
+            user.nom_tournoi == f"{tournament_name}"
+        )
+        print(data_tournament)
+        date_end = data_tournament[0]["date_de_fin"]
+        print(date_end)
+        if date_end == "Le tournoi n'est pas encore fini.":
+            print("coucou")
+            round_name = round_controller.EnterDataRound.round_name(tournament_name)
+            choice = 0
+            choice_list = [1, 2, 3, 4, 5, 6, 7, 8]
+            while choice not in choice_list:
+                menu = input(
+                    "\nTapez un nombre correspondant à un des choix proposés.\n"
+                    "1 - Affichez les informations sur le tournoi en cours.\n"
+                    "2 - Affichez la liste des joueurs du tournoi avec les points totaux.\n"
+                    "3 - Affichez tous les matchs du tournoi.\n"
+                    "4 - Affichez la liste de tous les joueurs déjà enregistrés.\n"
+                    f"5 - Lancez le {round_name.replace('_',' ')}.\n"
+                    "6 - Modifiez le classement d'un joueur.\n"
+                    "7 - Quittez le tournoi.\n"
+                    "8 - Quittez le programme.\n"
+                )
+                try:
+                    choice = int(menu)
+                except ValueError:
+                    menus_view.Menu.error_not_number()
+            if choice == 1:
+                tournament_controller.TournamentDeserializer.info_tournament(
+                    tournament_name
+                )
+                Menus.previous_menu_with_parameter_name(
+                    Menus.tournament_start_menu, tournament_name
+                )
+            elif choice == 2:
+                Menus.players_list_tournament_menu(tournament_name)
+                Menus.previous_menu_with_parameter_name(
+                    Menus.tournament_start_menu, tournament_name
+                )
+            elif choice == 3:
+                round_controller.RoundDeserializer.all_matches_rounds(tournament_name)
+                Menus.previous_menu_with_parameter_name(
+                    Menus.tournament_start_menu, tournament_name
+                )
+            elif choice == 4:
+                Menus.players_list_menu()
+                Menus.previous_menu_with_parameter_name(
+                    Menus.tournament_start_menu, tournament_name
+                )
+            elif choice == 5:
+
+                writer_data_controller.writer_data_start_round(
+                    tournament_name, round_name
+                )
+                writer_data_controller.writer_data_matches_round(
+                    tournament_name, round_name
+                )
+                writer_data_controller.writer_timestamp_start_round(
+                    tournament_name, round_name
+                )
+                round_view.ShowRound.view_round_work()
+                round_controller.RoundDeserializer.show_matches_round(
+                    tournament_name, round_name
+                )
+                writer_data_controller.writer_data_end_round(
+                    tournament_name, round_name
+                )
+                writer_data_controller.writer_rounds_name(tournament_name)
+                writer_data_controller.writer_timestamp_end_round(
+                    tournament_name, round_name
+                )
+                Menus.enter_result_menu(tournament_name, round_name)
+                number_round = int(round_name.replace("Round_", ""))
+                if number_round >= 4:
+                    Menus.continue_or_finish_menu(number_round, tournament_name)
+                else:
+                    Menus.previous_menu_with_parameter_name(
+                        Menus.tournament_start_menu, tournament_name
+                    )
+            elif choice == 6:
+                player_controller.PlayersDeserializer.change_rank_player(players_table)
+                Menus.previous_menu_with_parameter_name(
+                    Menus.tournament_start_menu, tournament_name
+                )
+            elif choice == 7:
+                Menus.main_menu()
+            elif choice == 8:
+                quit()
+        Menus.tournament_finished_menu(tournament_name)
+
+    @staticmethod
+    def continue_or_finish_menu(number_round, tournament_name):
         choice = 0
-        choice_list = [1, 2, 3, 4, 5, 6, 7, 8]
+        choice_list = [1, 2]
+        while choice not in choice_list:
+            menu = input(
+                f"Vous avez fait {number_round} rounds."
+                "\n1 - faire encore un autre round.\n"
+                "2 - terminer le tournoi.\n"
+            )
+            try:
+                choice = int(menu)
+            except ValueError:
+                menus_view.Menu.error_not_number()
+        if choice == 1:
+            Menus.tournament_start_menu(tournament_name)
+        elif choice == 2:
+            writer_data_controller.writer_timestamp_end_tournament(tournament_name)
+            Menus.tournament_finished_menu(tournament_name)
+
+    @staticmethod
+    def tournament_finished_menu(tournament_name):
+        choice = 0
+        choice_list = [1, 2, 3, 4, 5, 6, 7]
         while choice not in choice_list:
             menu = input(
                 "\nTapez un nombre correspondant à un des choix proposés.\n"
                 "1 - Affichez les informations sur le tournoi en cours.\n"
-                "2 - Affichez la liste des joueurs du tournoi en cours avec les points totaux.\n"
+                "2 - Affichez la liste des joueurs du tournoi avec les points totaux.\n"
                 "3 - Affichez tous les matchs du tournoi.\n"
                 "4 - Affichez la liste de tous les joueurs déjà enregistrés.\n"
-                f"5 - Lancez le {round_name.replace('_',' ')}.\n"
-                "6 - Modifiez le classement d'un joueur.\n"
-                "7 - Quittez le tournoi.\n"
-                "8 - Quittez le programme.\n"
+                "5 - Modifiez le classement d'un joueur.\n"
+                "6 - Quittez le tournoi.\n"
+                "7 - Quittez le programme.\n"
             )
             try:
                 choice = int(menu)
@@ -171,53 +281,31 @@ class Menus:
                 tournament_name
             )
             Menus.previous_menu_with_parameter_name(
-                Menus.tournament_start_menu, tournament_name
+                Menus.tournament_finished_menu, tournament_name
             )
         elif choice == 2:
             Menus.players_list_tournament_menu(tournament_name)
             Menus.previous_menu_with_parameter_name(
-                Menus.tournament_start_menu, tournament_name
+                Menus.tournament_finished_menu, tournament_name
             )
         elif choice == 3:
-            round_controller.RoundDeserializer.all_matchs_rounds(tournament_name)
+            round_controller.RoundDeserializer.all_matches_rounds(tournament_name)
             Menus.previous_menu_with_parameter_name(
-                Menus.tournament_start_menu, tournament_name
+                Menus.tournament_finished_menu, tournament_name
             )
         elif choice == 4:
             Menus.players_list_menu()
             Menus.previous_menu_with_parameter_name(
-                Menus.tournament_start_menu, tournament_name
+                Menus.tournament_finished_menu, tournament_name
             )
         elif choice == 5:
-
-            writer_data_controller.writer_data_start_round(tournament_name, round_name)
-            writer_data_controller.writer_data_matches_round(
-                tournament_name, round_name
-            )
-            writer_data_controller.writer_timestamp_start_round(
-                tournament_name, round_name
-            )
-            round_view.ShowRound.view_round_work()
-            round_controller.RoundDeserializer.show_matches_round(
-                tournament_name, round_name
-            )
-            writer_data_controller.writer_data_end_round(tournament_name, round_name)
-            writer_data_controller.writer_rounds_name(tournament_name)
-            writer_data_controller.writer_timestamp_end_round(
-                tournament_name, round_name
-            )
-            Menus.enter_result_menu(tournament_name, round_name)
-            Menus.previous_menu_with_parameter_name(
-                Menus.tournament_start_menu, tournament_name
-            )
-        elif choice == 6:
             player_controller.PlayersDeserializer.change_rank_player(players_table)
             Menus.previous_menu_with_parameter_name(
-                Menus.tournament_start_menu, tournament_name
+                Menus.tournament_finished_menu, tournament_name
             )
-        elif choice == 7:
+        elif choice == 6:
             Menus.main_menu()
-        elif choice == 8:
+        elif choice == 7:
             quit()
 
     @staticmethod
