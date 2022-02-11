@@ -18,10 +18,10 @@ class ShowRound:
     @staticmethod
     def view_round_work():
         print("\nLancement du round...")
-        time.sleep(2)
+        time.sleep(0.5)
         input("Appyuez sur une touche quand le round est terminé...")
         print("...round terminé.\n")
-        time.sleep(1)
+        time.sleep(0.5)
         print("Et voici les résultats de la simulation, de ce round :")
 
     @staticmethod
