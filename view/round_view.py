@@ -1,22 +1,25 @@
-from controller import round_controller
 import time
 
 
 class ShowRound:
     @staticmethod
     def view_error_hour():
+        """view message error hour"""
         print("Entrez une heure.\n")
 
     @staticmethod
     def view_round_end():
+        """view message round end"""
         print("\nLe round est terminé.")
 
     @staticmethod
     def view_none_round():
+        """view message none round"""
         print("\nIl n'y a pas de matchs, ni de rounds pour le moment.")
 
     @staticmethod
     def view_round_work():
+        """view round work"""
         print("\nLancement du round...")
         time.sleep(0.5)
         input("Appyuez sur une touche quand le round est terminé...")
@@ -26,12 +29,13 @@ class ShowRound:
 
     @staticmethod
     def view_matches_round(matches):
+        """view matches round"""
         print()
+        print(f'nom du round :{matches["nom_du_round"]}')
+        print(f'date de debut :{matches["date_debut_round"]}')
         try:
-            print(f'nom du round :{matches["nom_du_round"]}')
-            print(f'date de debut :{matches["date_debut_round"]}')
             print(f'date de fin :{matches["date_fin_round"]}')
-        except:
+        except KeyError:
             pass
         match_index = 1
         matches_list = []
@@ -58,8 +62,10 @@ class ShowRound:
 
     @staticmethod
     def view_end_round():
+        """view message end round"""
         print("Ce round est fini, et les points de matchs ont été rentré.\n")
 
     @staticmethod
     def view_timestamp_end(timestamp):
+        """view message timestamp end"""
         print(f"date et heure de fin du round :{timestamp}")

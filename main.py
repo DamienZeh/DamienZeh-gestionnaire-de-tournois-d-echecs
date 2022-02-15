@@ -2,7 +2,7 @@ from controller import menus_controller
 
 
 def main():
-    """Docstring"""
+    """Allows launch all software"""
     launch = menus_controller.Menus
     launch.welcome_menu()
 

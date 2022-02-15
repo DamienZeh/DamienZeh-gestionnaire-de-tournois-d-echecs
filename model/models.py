@@ -1,4 +1,8 @@
 class Player:
+    """It creates attributes for Player class.
+    id_player, lastname, firstname, date_of_birth,
+    sex, tournament_point and ranking.
+    """
     def __init__(
         self,
         id_player="",
@@ -19,6 +23,11 @@ class Player:
 
 
 class Tournament:
+    """It creates attributes for Tournament class.
+    id_tournament, name, place, start_date,
+    end_date, round_number, time_control,
+    description and players_id
+    """
     def __init__(
         self,
         id_tournament="",
@@ -43,6 +52,9 @@ class Tournament:
 
 
 class Round:
+    """It create attributes for Round class.
+    id_round,name_round, players_id, number_round,
+    start_date and end_date."""
     def __init__(
         self,
         id_round="",
@@ -61,7 +73,14 @@ class Round:
 
 
 class Match:
-    def __init__(self, match_name, first_player="", second_player="", result=""):
+    """It create attributes for Match class.
+    match_name, first_player,
+    second_player and result.
+    """
+    def __init__(self, match_name,
+                 first_player="",
+                 second_player="",
+                 result=""):
         self.match_name = match_name
         self.first_player = first_player
         self.second_player = second_player
