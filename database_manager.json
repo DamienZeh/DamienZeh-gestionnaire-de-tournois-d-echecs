@@ -2,113 +2,89 @@
     "players": {
         "1": {
             "id_joueur": 1,
-            "nom": "Mercier",
-            "prenom": "Martin",
+            "nom": "MERCIER",
+            "prenom": "MARTIN",
             "date_de_naissance": " 28/11/1992",
             "sexe": "H",
             "rang_dans_le_classement_general": 0
         },
         "2": {
             "id_joueur": 2,
-            "nom": "Faure",
-            "prenom": "Bernard",
+            "nom": "FAURE",
+            "prenom": "BERNARD",
             "date_de_naissance": "08/02/1965",
             "sexe": "H",
             "rang_dans_le_classement_general": 10
         },
         "3": {
             "id_joueur": 3,
-            "nom": "Fontaine",
-            "prenom": "Thomas",
+            "nom": "FONTAINE",
+            "prenom": "THOMAS",
             "date_de_naissance": "02/07/2003",
             "sexe": "H",
             "rang_dans_le_classement_general": 2
         },
         "4": {
             "id_joueur": 4,
-            "nom": "Lambert",
-            "prenom": "Laurent",
+            "nom": "LAMBERT",
+            "prenom": "LAURENT",
             "date_de_naissance": "07/03/1999",
             "sexe": "H",
             "rang_dans_le_classement_general": 6
         },
         "5": {
             "id_joueur": 5,
-            "nom": "Bonnet",
-            "prenom": "Simon",
+            "nom": "BONNET",
+            "prenom": "SIMON",
             "date_de_naissance": "30/09/1986",
             "sexe": "H",
             "rang_dans_le_classement_general": 0
         },
         "6": {
             "id_joueur": 6,
-            "nom": "Muller",
-            "prenom": "Michelle",
+            "nom": "MULLER",
+            "prenom": "MICHELLE",
             "date_de_naissance": "25/06/1993",
             "sexe": "H",
             "rang_dans_le_classement_general": 0
         },
         "7": {
             "id_joueur": 7,
-            "nom": "Fournier",
-            "prenom": "Andre",
+            "nom": "FOURNIER",
+            "prenom": "ANDRE",
             "date_de_naissance": "10/02/1973",
             "sexe": "F",
             "rang_dans_le_classement_general": 5
         },
         "8": {
             "id_joueur": 8,
-            "nom": "Morel",
-            "prenom": "Jessica",
+            "nom": "MOREL",
+            "prenom": "JESSICA",
             "date_de_naissance": "18/11/1995",
             "sexe": "F",
             "rang_dans_le_classement_general": 0
         },
         "9": {
             "id_joueur": 9,
-            "nom": "Roux",
-            "prenom": "David",
+            "nom": "ROUX",
+            "prenom": "DAVID",
             "date_de_naissance": "24/10/1963",
             "sexe": "H",
             "rang_dans_le_classement_general": 32
         },
         "10": {
             "id_joueur": 10,
-            "nom": "Petit",
-            "prenom": "Jeanne",
+            "nom": "PETIT",
+            "prenom": "JEANNE",
             "date_de_naissance": "10/01/1985",
             "sexe": "H",
-            "rang_dans_le_classement_general": 28
+            "rang_dans_le_classement_general": 2
         },
         "11": {
             "id_joueur": 11,
-            "nom": "Leroy",
-            "prenom": "Sylvie",
+            "nom": "LEROY",
+            "prenom": "SYLVIE",
             "date_de_naissance": "19/04/1992",
-            "sexe": "H",
-            "rang_dans_le_classement_general": 32
-        },
-        "12": {
-            "id_joueur": 12,
-            "nom": "Dubois",
-            "prenom": "Louis",
-            "date_de_naissance": "29/05/1969",
-            "sexe": "H",
-            "rang_dans_le_classement_general": 40
-        },
-        "13": {
-            "id_joueur": 13,
-            "nom": "Blanc",
-            "prenom": "Charles",
-            "date_de_naissance": "13/04/1972",
-            "sexe": "H",
-            "rang_dans_le_classement_general": 42
-        },
-        "14": {
-            "id_joueur": 14,
-            "nom": "Boyer",
-            "prenom": "Adam",
-            "date_de_naissance": "22/07/1963",
             "sexe": "H",
             "rang_dans_le_classement_general": 2
         }
@@ -116,87 +92,69 @@
     "tournaments": {
         "1": {
             "id_tournament": 1,
-            "nom_tournoi": "Paris 2022",
-            "endroit": "Paris",
-            "date_de_debut": "08/02/2022 15:51",
-            "rounds_finis": "Round_1, Round_2, Round_3, Round_4, Round_5",
-            "mode_blitz_bullet_ou_coup_rapide": "blitz",
-            "description": "Tournoi de Paris 2022",
-            "id_des_joueurs_et_points": [
-                [
-                    1,
-                    2.0
-                ],
-                [
-                    5,
-                    3.5
-                ],
-                [
-                    7,
-                    1.0
-                ],
-                [
-                    14,
-                    3.0
-                ],
-                [
-                    2,
-                    3.0
-                ],
-                [
-                    9,
-                    2.0
-                ],
-                [
-                    4,
-                    3.0
-                ],
-                [
-                    8,
-                    2.5
-                ]
-            ]
-        },
-        "2": {
-            "id_tournament": 2,
-            "nom_tournoi": "Castres 2022",
-            "endroit": "Castres",
-            "date_de_debut": "08/02/2022 16:14",
-            "rounds_finis": "Round_1, Round_2, Round_3, Round_4",
+            "nom_tournoi": "PARIS_2022",
+            "endroit": "PARIS",
+            "date_de_debut": "15/02/2022 22:04",
+            "date_de_fin": "Le tournoi n'est pas encore fini.",
+            "rounds_finis": "Round_1, Round_2",
             "mode_blitz_bullet_ou_coup_rapide": "bullet",
-            "description": "Tournoi de Castres 2022",
+            "description": "Tournoi de Paris 2022.",
             "id_des_joueurs_et_points": [
-                [
-                    13,
-                    2.5
-                ],
-                [
-                    10,
-                    1.0
-                ],
-                [
-                    2,
-                    2.0
-                ],
-                [
-                    12,
-                    1.0
-                ],
-                [
-                    3,
-                    2.5
-                ],
-                [
-                    9,
-                    3.0
-                ],
                 [
                     11,
                     1.5
                 ],
                 [
-                    8,
-                    2.5
+                    4,
+                    0.5
+                ],
+                [
+                    10,
+                    0.5
+                ],
+                [
+                    1,
+                    1.0
+                ],
+                [
+                    3,
+                    2.0
+                ],
+                [
+                    2,
+                    0.5
+                ],
+                [
+                    7,
+                    2.0
+                ],
+                [
+                    9,
+                    0.0
+                ]
+            ]
+        },
+        "2": {
+            "id_tournament": 2,
+            "nom_tournoi": "CASTRES_2022",
+            "endroit": "CASTRES",
+            "date_de_debut": "15/02/2022 22:08",
+            "date_de_fin": "Le tournoi n'est pas encore fini.",
+            "rounds_finis": "aucun pour le moment.",
+            "mode_blitz_bullet_ou_coup_rapide": "coup_rapide",
+            "description": "Tournoi de Castres 2022",
+            "id_des_joueurs_et_points": [
+                [
+                    9,
+                    0.0
+                ],
+                [
+                    2,
+                    0.0
+                ],
+                [
+                    4,
+                    0.0
                 ]
             ]
         }
@@ -205,416 +163,94 @@
         "1": {
             "id_round_tournoi": 1,
             "nom_du_round": "Round_1",
-            "date_debut_round": "08/02/2022 16:00",
+            "date_debut_round": "15/02/2022 22:06",
             "match 1": [
                 [
-                    "Roux David",
-                    1.0
+                    "ROUX DAVID",
+                    0.0
                 ],
                 [
-                    "Boyer Adam",
-                    0.0
+                    "LEROY SYLVIE",
+                    1.0
                 ]
             ],
             "match 2": [
                 [
-                    "Faure Bernard",
-                    0.0
+                    "FAURE BERNARD",
+                    0.5
                 ],
                 [
-                    "Mercier Martin",
-                    1.0
+                    "PETIT JEANNE",
+                    0.5
                 ]
             ],
             "match 3": [
                 [
-                    "Lambert Laurent",
+                    "LAMBERT LAURENT",
                     0.0
                 ],
                 [
-                    "Bonnet Simon",
+                    "FONTAINE THOMAS",
                     1.0
                 ]
             ],
             "match 4": [
                 [
-                    "Fournier Andre",
-                    0.5
+                    "FOURNIER ANDRE",
+                    1.0
                 ],
                 [
-                    "Morel Jessica",
-                    0.5
+                    "MERCIER MARTIN",
+                    0.0
                 ]
             ],
-            "date_fin_round": "08/02/2022 16:01"
+            "date_fin_round": "15/02/2022 22:07"
         },
         "2": {
             "id_round_tournoi": 1,
             "nom_du_round": "Round_2",
-            "date_debut_round": "08/02/2022 16:04",
+            "date_debut_round": "15/02/2022 22:08",
             "match 1": [
                 [
-                    "Roux David",
-                    0.0
-                ],
-                [
-                    "Morel Jessica",
-                    1.0
-                ]
-            ],
-            "match 2": [
-                [
-                    "Mercier Martin",
-                    0.0
-                ],
-                [
-                    "Lambert Laurent",
-                    1.0
-                ]
-            ],
-            "match 3": [
-                [
-                    "Faure Bernard",
+                    "FOURNIER ANDRE",
                     1.0
                 ],
                 [
-                    "Bonnet Simon",
-                    0.0
-                ]
-            ],
-            "match 4": [
-                [
-                    "Fournier Andre",
-                    0.0
-                ],
-                [
-                    "Boyer Adam",
-                    1.0
-                ]
-            ],
-            "date_fin_round": "08/02/2022 16:05"
-        },
-        "3": {
-            "id_round_tournoi": 1,
-            "nom_du_round": "Round_3",
-            "date_debut_round": "08/02/2022 16:06",
-            "match 1": [
-                [
-                    "Morel Jessica",
-                    0.0
-                ],
-                [
-                    "Boyer Adam",
-                    1.0
-                ]
-            ],
-            "match 2": [
-                [
-                    "Roux David",
-                    0.5
-                ],
-                [
-                    "Mercier Martin",
-                    0.5
-                ]
-            ],
-            "match 3": [
-                [
-                    "Bonnet Simon",
-                    1.0
-                ],
-                [
-                    "Fournier Andre",
-                    0.0
-                ]
-            ],
-            "match 4": [
-                [
-                    "Lambert Laurent",
-                    1.0
-                ],
-                [
-                    "Faure Bernard",
-                    0.0
-                ]
-            ],
-            "date_fin_round": "08/02/2022 16:07"
-        },
-        "4": {
-            "id_round_tournoi": 1,
-            "nom_du_round": "Round_4",
-            "date_debut_round": "08/02/2022 16:08",
-            "match 1": [
-                [
-                    "Lambert Laurent",
-                    0.0
-                ],
-                [
-                    "Morel Jessica",
-                    1.0
-                ]
-            ],
-            "match 2": [
-                [
-                    "Mercier Martin",
-                    0.0
-                ],
-                [
-                    "Boyer Adam",
-                    1.0
-                ]
-            ],
-            "match 3": [
-                [
-                    "Bonnet Simon",
-                    0.5
-                ],
-                [
-                    "Roux David",
-                    0.5
-                ]
-            ],
-            "match 4": [
-                [
-                    "Fournier Andre",
-                    0.0
-                ],
-                [
-                    "Faure Bernard",
-                    1.0
-                ]
-            ],
-            "date_fin_round": "08/02/2022 16:09"
-        },
-        "5": {
-            "id_round_tournoi": 1,
-            "nom_du_round": "Round_5",
-            "date_debut_round": "08/02/2022 16:10",
-            "match 1": [
-                [
-                    "Mercier Martin",
-                    0.5
-                ],
-                [
-                    "Fournier Andre",
-                    0.5
-                ]
-            ],
-            "match 2": [
-                [
-                    "Morel Jessica",
-                    0.0
-                ],
-                [
-                    "Bonnet Simon",
-                    1.0
-                ]
-            ],
-            "match 3": [
-                [
-                    "Lambert Laurent",
-                    1.0
-                ],
-                [
-                    "Boyer Adam",
-                    0.0
-                ]
-            ],
-            "match 4": [
-                [
-                    "Faure Bernard",
-                    1.0
-                ],
-                [
-                    "Roux David",
-                    0.0
-                ]
-            ],
-            "date_fin_round": "08/02/2022 16:11"
-        },
-        "6": {
-            "id_round_tournoi": 2,
-            "nom_du_round": "Round_1",
-            "date_debut_round": "08/02/2022 16:18",
-            "match 1": [
-                [
-                    "Blanc Charles",
-                    1.0
-                ],
-                [
-                    "Petit Jeanne",
+                    "PETIT JEANNE",
                     0.0
                 ]
             ],
             "match 2": [
                 [
-                    "Dubois Louis",
-                    0.0
-                ],
-                [
-                    "Faure Bernard",
-                    1.0
-                ]
-            ],
-            "match 3": [
-                [
-                    "Roux David",
+                    "LEROY SYLVIE",
                     0.5
                 ],
                 [
-                    "Fontaine Thomas",
-                    0.5
-                ]
-            ],
-            "match 4": [
-                [
-                    "Leroy Sylvie",
-                    0.5
-                ],
-                [
-                    "Morel Jessica",
-                    0.5
-                ]
-            ],
-            "date_fin_round": "08/02/2022 16:19"
-        },
-        "7": {
-            "id_round_tournoi": 2,
-            "nom_du_round": "Round_2",
-            "date_debut_round": "08/02/2022 16:21",
-            "match 1": [
-                [
-                    "Blanc Charles",
-                    1.0
-                ],
-                [
-                    "Fontaine Thomas",
-                    0.0
-                ]
-            ],
-            "match 2": [
-                [
-                    "Faure Bernard",
-                    0.0
-                ],
-                [
-                    "Morel Jessica",
-                    1.0
-                ]
-            ],
-            "match 3": [
-                [
-                    "Roux David",
-                    0.5
-                ],
-                [
-                    "Dubois Louis",
-                    0.5
-                ]
-            ],
-            "match 4": [
-                [
-                    "Leroy Sylvie",
-                    0.0
-                ],
-                [
-                    "Petit Jeanne",
-                    1.0
-                ]
-            ],
-            "date_fin_round": "08/02/2022 16:22"
-        },
-        "8": {
-            "id_round_tournoi": 2,
-            "nom_du_round": "Round_3",
-            "date_debut_round": "08/02/2022 16:34",
-            "match 1": [
-                [
-                    "Blanc Charles",
-                    0.0
-                ],
-                [
-                    "Faure Bernard",
-                    1.0
-                ]
-            ],
-            "match 2": [
-                [
-                    "Morel Jessica",
-                    1.0
-                ],
-                [
-                    "Dubois Louis",
-                    0.0
-                ]
-            ],
-            "match 3": [
-                [
-                    "Roux David",
-                    1.0
-                ],
-                [
-                    "Leroy Sylvie",
-                    0.0
-                ]
-            ],
-            "match 4": [
-                [
-                    "Petit Jeanne",
-                    0.0
-                ],
-                [
-                    "Fontaine Thomas",
-                    1.0
-                ]
-            ],
-            "date_fin_round": "08/02/2022 16:35"
-        },
-        "9": {
-            "id_round_tournoi": 2,
-            "nom_du_round": "Round_4",
-            "date_debut_round": "08/02/2022 18:28",
-            "match 1": [
-                [
-                    "Morel Jessica",
-                    0.0
-                ],
-                [
-                    "Fontaine Thomas",
-                    1.0
-                ]
-            ],
-            "match 2": [
-                [
-                    "Blanc Charles",
-                    0.5
-                ],
-                [
-                    "Dubois Louis",
+                    "LAMBERT LAURENT",
                     0.5
                 ]
             ],
             "match 3": [
                 [
-                    "Petit Jeanne",
+                    "ROUX DAVID",
                     0.0
                 ],
                 [
-                    "Roux David",
+                    "FONTAINE THOMAS",
                     1.0
                 ]
             ],
             "match 4": [
                 [
-                    "Faure Bernard",
+                    "FAURE BERNARD",
                     0.0
                 ],
                 [
-                    "Leroy Sylvie",
+                    "MERCIER MARTIN",
                     1.0
                 ]
             ],
-            "date_fin_round": "08/02/2022 18:29"
+            "date_fin_round": "15/02/2022 22:10"
         }
     }
 }
