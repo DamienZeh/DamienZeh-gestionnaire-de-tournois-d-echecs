@@ -2,7 +2,7 @@ class Menu:
     @staticmethod
     def view_welcome_main_menu():
         """view message welcome main menu"""
-        print("\nBienvenue dans ce gestionnaire de tournois d'échecs")
+        print("\nBienvenue dans ce gestionnaire de tournois d'échecs.")
 
     @staticmethod
     def view_show_choices_main_menu():
@@ -29,7 +29,7 @@ class Menu:
     def view_number_players_complete(length_players_list_id, number_players):
         """view number players"""
         print(f"{length_players_list_id}"
-              f" joueur(s) sur {number_players} de prêt(s) .")
+              f" joueur(s) sur {number_players} de prêt(s).")
 
     @staticmethod
     def view_number_players(length_players_list_id, number_players):
@@ -38,5 +38,5 @@ class Menu:
             f"\nVous devez avoir {number_players} joueurs pour le tournoi.\n"
             f"Faites votre choix : "
             f"{length_players_list_id}"
-            f" joueur(s) sur {number_players} de prêt(s) ."
+            f" joueur(s) sur {number_players} de prêt(s)."
         )
