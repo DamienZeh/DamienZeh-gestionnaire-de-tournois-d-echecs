@@ -59,7 +59,7 @@ Il sera aussi stocké dans la liste du classement général.<br/><br/>
 
 - **Choisissez un joueur présent dans le classement général**<br/>
 Lors de la création d'un tournoi, vous pouvez aussi choisir d'ajouter un joueur,<br/>
-- existant dans la liste du classement général.<br/><br/>
+existant dans la liste du classement général.<br/><br/>
 
 - **Affichez la liste de tous les joueurs du tournoi**<br/>
 Après avoir chargé un tournoi, vous pouvez voir tous joueurs qui y participent,<br/>
@@ -95,14 +95,6 @@ Vous pouvez quand vous le souhaitez quitter un tournoi, et donc revenir au menu 
 ou même quitter le programme.<br/><br/>
 
 <br/><br/>
-
-
-
-
-
-<br/><br/><br/>
-
-
 
 
 
