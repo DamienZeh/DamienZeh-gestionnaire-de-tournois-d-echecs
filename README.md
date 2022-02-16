@@ -81,7 +81,8 @@ On divise les joueurs en deux moitiés, une supérieure et une inférieure.<br/>
 Le meilleur joueur de la moitié supérieure est jumelé avec le meilleur joueur de la moitié inférieure, etc. <br/>
 Les matchs des rounds qui suivent sont triés en fonctions des points des matchs précédents,<br/>
 et si des joueurs ont les mêmes points, on les trie en fonction du classement général.<br/>
-On peut réaliser autant de rounds que l'on souhaite.<br/><br/>
+On peut réaliser autant de rounds que l'on souhaite.<br/>
+A la fin de chaque round, il est demandé de rentrer manuellement les résultats.<br/><br/>
 
 - **Affichez tous les matchs du tournoi**<br/>
 Pendant un tournoi, vous pouvez afficher la liste de rounds et donc de matchs réalisés,<br/>
@@ -95,9 +96,9 @@ Si vous le terminez, alors une date sera automatiquement générée, et vous ne 
 Vous pouvez quand vous le souhaitez quitter un tournoi, et donc revenir au menu principal,<br/> 
 ou même quitter le programme.<br/><br/>
 
-**Détail sur les rounds et matchs**, Dans la mesure du possible, pour éviter les répétitions,
-si le joueur 1 à déja affronté le joueur 2, alors ça sera le 3, s'il a aussi affronté le 3, ça sera le 4.
-Et quand tout cela à déjà eu lieu, les matchs sont générés aléatoirement.
+**Détail sur les rounds et matchs**, Dans la mesure du possible, pour éviter les répétitions,<br/>
+si le joueur 1 à déja affronté le joueur 2, alors ça sera le 3, s'il a aussi affronté le 3, ça sera le 4.<br/>
+Et quand tout cela à déjà eu lieu, les matchs sont générés aléatoirement.<br/>
 Et le round d'après, on recommence la procédure (jusqu'a 7 rounds de matchs inédits).
 
 <br/><br/>
