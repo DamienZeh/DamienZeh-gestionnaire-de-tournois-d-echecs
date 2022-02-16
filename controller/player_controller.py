@@ -313,7 +313,8 @@ class PlayersDeserializer:
         """It arranges by order the list player, thanks to list_players
         , key_order and keys """
         if len(list_players):
-            list_players_sort_name = sorted(list_players, key=key_order)
+            list_players_sort_name = sorted(
+                list_players, key=lambda x: x[key_order])
             index_player = 1
             for item in list_players_sort_name:
                 item_cut = {k: item[k] for k in keys}
@@ -328,21 +329,6 @@ class PlayersDeserializer:
                 index_player += 1
         else:
             player_view.ShowPlayer.view_none_player()
-
-    @staticmethod
-    def key_order_alphabetical():
-        key = lambda nom: nom["nom"]
-        return key
-
-    @staticmethod
-    def key_order_ranking():
-        key = lambda rang: rang["rang_dans_le_classement_general"]
-        return key
-
-    @staticmethod
-    def key_order_point():
-        key = lambda rang: rang["Points totaux du tournoi"]
-        return key
 
     @staticmethod
     def compare_id_lastname_firstname(lastname, firstname):
