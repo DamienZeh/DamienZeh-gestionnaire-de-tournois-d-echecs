@@ -1,5 +1,5 @@
 
-# Gestionnaire de tournoi d'échecs
+# Gestionnaire de tournois d'échecs
 
 
 - Projet permettant de gérer des tournois d'échecs.<br/>
@@ -36,8 +36,8 @@ A partir de la vous arriverez dans le menu principal du projet.
 ### Le programme
 
 
-Au lancement du programme, un fichier **database_manager.json** sera automatiquement créé, si jamais il n'est pas déjà présent.<br/>
-C'est sur ce fichier que seront stockées vos informations de tournois.<br/>
+Au lancement du programme, un fichier **database_manager.json** sera automatiquement créé,<br/>
+si jamais il n'est pas déjà présent. C'est sur ce fichier que seront stockées vos informations de tournois.<br/>
 Voici les différentes possiblités :
 
 - **Affichez tous les tournois/ Chargez un tournoi**<br/>
@@ -49,8 +49,8 @@ ils auront aussi un classement général dans leurs informations.<br/><br/>
 
 - **Créez un tournoi**<br/>
 Vous pouvez créer autant de tournois que vous le souhaitez.<br/>
-Vous rentrez différentes informations, comme le nom, le lieu, le mode (Blitz, Bullet, Coup rapide), et la description.<br/>
-La date de création et les rounds finis sont générés automatiquement au fur et à mesure.<br/>
+Vous rentrez différentes informations, comme le nom, le lieu, le mode (Blitz, Bullet, Coup rapide),<br/>
+ et la description. La date de création et les rounds finis sont générés automatiquement au fur et à mesure.<br/>
 Un tournoi est composé de 8 joueurs, et fonctionne sur le principe des rondes Suisses. <br/><br/>
 
 - **Entrez un joueur**<br/>
@@ -58,7 +58,8 @@ Lors de la création d'un tournoi, vous pouvez entrer les informations d'un nouv
 Il sera aussi stocké dans la liste du classement général.<br/><br/>
 
 - **Choisissez un joueur présent dans le classement général**<br/>
-Lors de la création d'un tournoi, vous pouvez aussi choisir d'ajouter un joueur existant dans la liste du classement général.<br/><br/>
+Lors de la création d'un tournoi, vous pouvez aussi choisir d'ajouter un joueur,<br/>
+- existant dans la liste du classement général.<br/><br/>
 
 - **Affichez la liste de tous les joueurs du tournoi**<br/>
 Après avoir chargé un tournoi, vous pouvez voir tous joueurs qui y participent,<br/>
