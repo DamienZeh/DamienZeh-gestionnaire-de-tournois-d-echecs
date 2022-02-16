@@ -354,17 +354,18 @@ class Menus:
         Menus.previous_menu(Menus.tournament_start_menu, tournament_name)
 
     @staticmethod
-    def players_list_tournament_menu(tournament_name):
-        """Thanks to tournament_name, allows to show the players of tournament
+    def players_list_tournament_menu(name_tournament):
+        """Thanks to name_tournament, allows to show the players of tournament
          in different orders.
         Alphabetical or rank order or order points."""
+        tournament_name = name_tournament.upper().replace(" ", "_")
         keys = (
             "nom",
             "prenom",
             "date_de_naissance",
             "sexe",
             "rang_dans_le_classement_general",
-            "Points totaux du tournoi",
+            "Points_totaux_du_tournoi",
         )
         players_list_tournament = []
         data_tournament = w.tournament_table.search(
@@ -378,7 +379,7 @@ class Menus:
                 id_player[0]
             )
             point = player[1]
-            point_players = {"Points totaux du tournoi": point}
+            point_players = {"Points_totaux_du_tournoi": point}
             points_players.append(point_players)
 
         for data, point_player in zip(players_list_tournament, points_players):
@@ -402,22 +403,17 @@ class Menus:
         if choice == 1:
             player_controller.PlayersDeserializer.\
                 players_list_order(
-                    players_list_tournament,
-                    player_controller.PlayersDeserializer.
-                    key_order_alphabetical(),
+                    players_list_tournament, "nom",
                     keys)
         elif choice == 2:
             player_controller.PlayersDeserializer\
                 .players_list_order(
-                    players_list_tournament,
-                    player_controller.
-                    PlayersDeserializer.key_order_ranking(),
+                    players_list_tournament, "rang_dans_le_classement_general",
                     keys)
         elif choice == 3:
             player_controller.PlayersDeserializer.\
                 players_list_order(
-                    players_list_tournament,
-                    player_controller.PlayersDeserializer.key_order_point(),
+                    players_list_tournament, "Points_totaux_du_tournoi",
                     keys)
 
     @staticmethod
@@ -447,13 +443,10 @@ class Menus:
 
         if choice == 1:
             player_controller.PlayersDeserializer.players_list_order(
-                w.players_table,
-                player_controller.
-                PlayersDeserializer.key_order_alphabetical(), keys)
+                w.players_table, "nom", keys)
         elif choice == 2:
             player_controller.PlayersDeserializer.players_list_order(
-                w.players_table,
-                player_controller.PlayersDeserializer.key_order_ranking(),
+                w.players_table, "rang_dans_le_classement_general",
                 keys
             )
 
