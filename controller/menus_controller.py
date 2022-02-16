@@ -89,7 +89,7 @@ class Menus:
                 " du tournoi avec les points totaux.\n"
                 "3 - Affichez la liste de tous les joueurs déjà enregistrés.\n"
                 "4 - Entrez un joueur.\n"
-                "5 - Ou choississez un joueur"
+                "5 - Ou choisissez un joueur"
                 " présent dans le classement général.\n"
                 "6 - Modifiez le classement d'un joueur.\n"
                 "7 - Quittez le tournoi.\n"
