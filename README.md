@@ -38,10 +38,10 @@ A partir de la vous arriverez dans le menu principal du projet.
 
 Au lancement du programme, un fichier **database_manager.json** sera automatiquement créé,<br/>
 si jamais il n'est pas déjà présent. C'est sur ce fichier que seront stockées vos informations de tournois.<br/>
-Voici les différentes possiblités :
+Voici les différentes possibilités du programme :
 
 - **Affichez tous les tournois/ Chargez un tournoi**<br/>
-Vous pouvez voir tous les tournois, terminés ou non, s'il y en a, évidemment.<br/><br/>
+S'il y en a, vous pouvez voir tous les tournois, terminés ou non.<br/><br/>
 
 - **Affichez la liste de tous les joueurs du classement général**<br/>
 S'il y a déjà des tournois de faits, vous pouvez voir tous joueurs qui ont participé à ces tournois,<br/>
@@ -50,7 +50,8 @@ ils auront aussi un classement général dans leurs informations.<br/><br/>
 - **Créez un tournoi**<br/>
 Vous pouvez créer autant de tournois que vous le souhaitez.<br/>
 Vous rentrez différentes informations, comme le nom, le lieu, le mode (Blitz, Bullet, Coup rapide),<br/>
- et la description. La date de création et les rounds finis sont générés automatiquement au fur et à mesure.<br/>
+ et la description. La date de création et l'affichage des rounds finis,<br/>
+sont générés automatiquement au fur et à mesure.<br/>
 Un tournoi est composé de 8 joueurs, et fonctionne sur le principe des rondes Suisses. <br/><br/>
 
 - **Entrez un joueur**<br/>
@@ -59,7 +60,7 @@ Il sera aussi stocké dans la liste du classement général.<br/><br/>
 
 - **Choisissez un joueur présent dans le classement général**<br/>
 Lors de la création d'un tournoi, vous pouvez aussi choisir d'ajouter un joueur,<br/>
-existant dans la liste du classement général.<br/><br/>
+existant de la liste du classement général, dans votre tournoi.<br/><br/>
 
 - **Affichez la liste de tous les joueurs du tournoi**<br/>
 Après avoir chargé un tournoi, vous pouvez voir tous joueurs qui y participent,<br/>
@@ -73,7 +74,7 @@ Vous pouvez à tout moment, changer le classement d'un joueur<br/>
 Après avoir chargé un tournoi, vous pouvez accéder aux informations sur celui ci.<br/><br/>
 
 - **Lancez un round**<br/>
-Après avoir chargé un tournoi, et entrez 8 joueurs, vous pouvez lancer un round.<br/>
+Après avoir chargé un tournoi, et entrez ou importez 8 joueurs, vous pouvez lancer un round.<br/>
 Un round est composé de 4 matchs.<br/>
 Les matchs du premier round sont triés en fonction du classement général de chacun.<br/>
 On divise les joueurs en deux moitiés, une supérieure et une inférieure.<br/>
@@ -83,7 +84,7 @@ et si des joueurs ont les mêmes points, on les trie en fonction du classement g
 On peut réaliser autant de rounds que l'on souhaite.<br/><br/>
 
 - **Affichez tous les matchs du tournoi**<br/>
-Pendant un tournoi, vous pouvez afficher la liste de round et donc de matchs réalisés,<br/>
+Pendant un tournoi, vous pouvez afficher la liste de rounds et donc de matchs réalisés,<br/>
 avec leurs dates de début et de fin.<br/><br/>
 
 - **Terminez un tournoi**<br/>
@@ -93,6 +94,11 @@ Si vous le terminez, alors une date sera automatiquement générée, et vous ne 
 - **Quittez un tournoi/Quittez le programme**<br/>
 Vous pouvez quand vous le souhaitez quitter un tournoi, et donc revenir au menu principal,<br/> 
 ou même quitter le programme.<br/><br/>
+
+**Détail sur les rounds et matchs**, Dans la mesure du possible, pour éviter les répétitions,
+si le joueur 1 à déja affronté le joueur 2, alors ça sera le 3, s'il a aussi affronté le 3, ça sera le 4.
+Et quand tout cela à déjà eu lieu, les matchs sont générés aléatoirement.
+Et le round d'après, on recommence la procédure (jusqu'a 7 rounds de matchs inédits).
 
 <br/><br/>
 
