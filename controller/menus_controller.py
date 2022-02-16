@@ -28,7 +28,7 @@ class Menus:
         while choice not in choice_list:
             menu = input(
                 "\nMenu principal\nTapez un nombre"
-                " correspondant à un des choix proposés.\n"
+                " correspondant à un des choix proposés :\n"
                 "1 - Affichez tous les tournois en cours ou terminé.\n"
                 "2 - Affichez la liste de tous les joueurs déjà enregistrés.\n"
                 "3 - chargez un tournoi en cours ou terminé.\n"
@@ -189,7 +189,7 @@ class Menus:
             while choice not in choice_list:
                 menu = input(
                     "\nTapez un nombre correspondant"
-                    " à un des choix proposés.\n"
+                    " à un des choix proposés :\n"
                     "1 - Affichez les informations sur le tournoi en cours.\n"
                     "2 - Affichez la liste des joueurs "
                     "du tournoi avec les points totaux.\n"
@@ -292,7 +292,7 @@ class Menus:
         while choice not in choice_list:
             menu = input(
                 "\nTapez un nombre correspondant"
-                " à un des choix proposés.\n"
+                " à un des choix proposés :\n"
                 "1 - Affichez les informations"
                 " sur le tournoi en cours.\n"
                 "2 - Affichez la liste des joueurs"
