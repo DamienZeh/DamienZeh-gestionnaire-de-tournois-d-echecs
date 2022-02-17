@@ -99,8 +99,11 @@ ou même quitter le programme.<br/><br/>
 **Détail sur les rounds et matchs**, Dans la mesure du possible, pour éviter les répétitions,<br/>
 si le joueur 1 à déja affronté le joueur 2, alors ça sera le 3, s'il a aussi affronté le 3, ça sera le 4.<br/>
 Et quand tout cela à déjà eu lieu, les matchs sont générés aléatoirement.<br/>
-Et le round d'après, on recommence la procédure (jusqu'a 7 rounds de matchs inédits).
+Et le round d'après, on recommence la procédure (jusqu'a 7 rounds de matchs inédits).<br/>
 
+**2 possibilités pour entrer les résultats de matchs**, soit vous tapez les points proposés par le simulateur,<br/>
+soit vous rentrez les points de vos vrais matchs.<br/>
+Car après tout, c'est le but premier du programme, de gérer vos propre tournois.
 <br/><br/>
 
 
