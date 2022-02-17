@@ -132,7 +132,7 @@ class RoundDeserializer:
         matches = RoundDeserializer.matches_round(tournament_name, round_name)
         match_index = 1
         player_view.ShowPlayer.point_player(
-            match_index, w.players_table, matches, tournament_name
+            match_index, w.players_table, matches, tournament_name, round_name
         )
 
     @staticmethod
