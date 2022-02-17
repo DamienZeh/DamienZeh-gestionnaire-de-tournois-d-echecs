@@ -1,4 +1,7 @@
-from controller import player_controller
+from tinydb import Query
+from controller import player_controller, writer_data_controller as w
+
+user = Query()
 
 
 class ShowPlayer:
@@ -139,7 +142,8 @@ class ShowPlayer:
             print(f"{first_list} --contre -- {second_list}.")
 
     @staticmethod
-    def point_player(match_index, players_table, matches, tournament_name):
+    def point_player(
+            match_index, players_table, matches, tournament_name, round_name):
         """View point player for all players"""
         print("\nEntrez les résultats")
         matches_list = []
@@ -156,7 +160,12 @@ class ShowPlayer:
             for player in match:
                 print(f"{player[0]}"
                       f" (le simulateur lui donne : {player[1]} point).")
-                player_controller.PlayersDeserializer.change_point_player(
-                    players_table, player[0], tournament_name
-                )
+                point_entered = player_controller.\
+                    PlayersDeserializer.change_point_player(
+                        players_table, player[0], tournament_name
+                    )
+                player[1] = point_entered
+            w.round_table.update(
+                {f"match {match_index}": match},
+                user.nom_du_round == round_name)
             match_index += 1
