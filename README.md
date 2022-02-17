@@ -2,7 +2,7 @@
 # Gestionnaire de tournois d'échecs
 
 
-- Projet permettant de gérer des tournois d'échecs.<br/>
+- Projet permettant de créer et gérer des tournois d'échecs.<br/>
 
 
 
@@ -104,11 +104,15 @@ Et le round d'après, on recommence la procédure (jusqu'a 7 rounds de matchs in
 
 **2 possibilités pour entrer les résultats de matchs**, soit vous tapez les points proposés par le simulateur,<br/>
 soit vous rentrez les points de vos vrais matchs.<br/>
-Car après tout, c'est le but premier du programme, de gérer vos propre tournois.
+Car après tout, c'est le but premier du programme, de pouvoir gérer vos propre tournois.
 <br/><br/>
 
+### Vérification du code
 
-
+- Pour faire un contrôle du code avec **flake8** et une longueur de ligne maximale de 119, tapez :<br/>
+``flake8 --max-line-length 119 --exclude=env``<br/><br/>
+- Si vous souhaitez générer un rapport nommé **flake8_rapport** avec **flake8-html**, tapez :<br/>
+``flake8 --max-line-length 119 --format=html --htmldir=flake8_rapport --exclude=env``<br/><br/>
 ## Auteur
 
 * **Damien Hernandez** _alias_ [DamienZeh](https://damienhernandez.fr/)
