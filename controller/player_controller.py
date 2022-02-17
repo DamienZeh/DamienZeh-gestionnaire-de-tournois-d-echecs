@@ -59,10 +59,11 @@ class EnterDataPlayer:
         """
         while True:
             choice = input("Sexe (H/F/X) : ")
-            if choice != "H" and choice != "F" and choice != "X":
+            if choice != "H" and choice != "F" and choice != "X"\
+                    and choice != "h" and choice != "f" and choice != "x":
                 player_view.ShowPlayer.view_error_sex()
             else:
-                return choice
+                return choice.upper()
 
     @staticmethod
     def enter_ranking():
@@ -305,6 +306,7 @@ class PlayersDeserializer:
             player_view.ShowPlayer.view_player_change_point(
                 lastname, firstname, point, total_point
             )
+            return point
         else:
             player_view.ShowPlayer.view_player_wrong_name()
 
