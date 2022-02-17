@@ -54,7 +54,7 @@ class ShowTournament:
         end_date,
     ):
         """view info tournament"""
-        print(f"nom_tournoi : {tournament_name}")
+        print(f'nom_tournoi : {tournament_name.replace("_", " ")}')
         print(f"endroit : {place}")
         print(f"date_de_debut : {start_date}")
         print(f"rounds_finis : {round_number}")
