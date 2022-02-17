@@ -38,6 +38,7 @@ A partir de la vous arriverez dans le menu principal du projet.
 
 Au lancement du programme, un fichier **database_manager.json** sera automatiquement créé,<br/>
 si jamais il n'est pas déjà présent. C'est sur ce fichier que seront stockées vos informations de tournois.<br/>
+Pour l'exemple, il y a un fichier .json présent avec quelques tournois et joueurs enregistrés.<br/>
 Voici les différentes possibilités du programme :
 
 - **Affichez tous les tournois/ Chargez un tournoi**<br/>
