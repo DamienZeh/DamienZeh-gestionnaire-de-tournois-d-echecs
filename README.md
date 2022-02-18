@@ -75,7 +75,7 @@ Vous pouvez à tout moment, changer le classement d'un joueur<br/>
 Après avoir chargé un tournoi, vous pouvez accéder aux informations sur celui ci.<br/><br/>
 
 - **Lancez un round**<br/>
-Après avoir chargé un tournoi, et entrez ou importez 8 joueurs, vous pouvez lancer un round.<br/>
+Après avoir chargé un tournoi, et entré ou importé 8 joueurs, vous pouvez lancer un round.<br/>
 Un round est composé de 4 matchs.<br/>
 Les matchs du premier round sont triés en fonction du classement général de chacun.<br/>
 On divise les joueurs en deux moitiés, une supérieure et une inférieure.<br/>
@@ -104,7 +104,7 @@ Et le round d'après, on recommence la procédure (jusqu'a 7 rounds de matchs in
 
 **2 possibilités pour entrer les résultats de matchs**, soit vous tapez les points proposés par le simulateur,<br/>
 soit vous rentrez les points de vos vrais matchs.<br/>
-Car après tout, c'est le but premier du programme, de pouvoir gérer vos propre tournois.
+Car après tout, c'est le but premier du programme, de pouvoir gérer vos propres tournois.
 <br/><br/>
 
 ### Vérification du code
